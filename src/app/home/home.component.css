@@ -1,0 +1,43 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+
+  .tp-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30%;
+ }
+ .tp-container > * {
+    width: 50%;
+ }
+ .form{
+   margin-top: 5%;
+ }
+ table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 1em;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.deleteButton{
+  border-radius: 50%;
+  color: red;
+  
+}
+.checkButton{
+  margin-left: 4em;
+  margin-right: -5em;
+}

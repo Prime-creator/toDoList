@@ -1,0 +1,58 @@
+<div class="container">
+    <mat-toolbar color="primary">
+        <span>TODO LIST</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+        </button>
+    </mat-toolbar>
+</div>
+
+<div class="tp-container">
+
+    <mat-form-field appearance="fill" class="form">
+        <mat-label>TASK</mat-label>
+        <mat-label *ngIf=condition> CANNOT BE EMPTY</mat-label>
+        <input #task matInput>
+        <!-- <button matSuffix>
+            <mat-icon matSuffix (click)="addTask(task.value)">add_circle</mat-icon>
+        </button> -->
+        <button class="addButton" (click)="addTask(task.value); task.value=''" matSuffix mat-fab color="primary"
+            aria-label="Example icon button with a delete icon">
+            <mat-icon>add_circle</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let task of tasks">
+                    <td>{{task.name}}</td>
+                    <td>{{task.done}}</td>
+                    <td> <button mat-fab color="warn" (click)="deleteTask(task)"
+                            aria-label="Example icon button with a delete icon">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button class="checkButton" mat-fab color="primary" (click)="doneTask(task)"
+                            aria-label="Example icon button with a delete icon">
+                            <mat-icon>check_circle</mat-icon>
+                        </button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
